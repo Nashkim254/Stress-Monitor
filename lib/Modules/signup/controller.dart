@@ -24,13 +24,13 @@ class SignupController extends GetxController {
       Get.off(() => Subscription());
     } else if (response.code == 422) {
       Get.dialog(ConfirmDialog(
-         color: errorColor,
+        color: errorColor,
         message: response.data["message"],
         onPressed: () => Get.back(),
       ));
     } else {
       Get.dialog(ConfirmDialog(
-         color: errorColor,
+        color: errorColor,
         message: response.data["message"],
         onPressed: () => Get.back(),
       ));
