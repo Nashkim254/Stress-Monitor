@@ -146,6 +146,7 @@ class _WebviewState extends State<Webview> {
                           }
                         }
                       });
+                      //TODO:stop scan
                 },
                 androidOnPermissionRequest:
                     (controller, origin, resources) async {

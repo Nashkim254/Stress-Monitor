@@ -95,7 +95,7 @@ class SubscriberController extends GetxController {
         diagnosis.value = "No results found";
       } else {
         results.value = response.data['result'];
-        print(results.value.toString());
+        
         for (int i = 0; i < results.length; i++) {
           var dates = results[i]['created_at'];
           var day = dates.split(' ');

@@ -337,33 +337,26 @@ class CalendarView extends StatelessWidget {
   }
 
   Widget? reultMethod(calendarDate) {
-    print(cont.listResults.value.toString());
     var seq = cont._sequentialDates.value.toList();
-    print(seq.toString());
-    if (calendarDate.date.month == DateTime.now().month) {
-      for (int j = 0; j <= seq.length; j++) {
-        for (int i = 0; i <= cont.listResults.value.length; i++) {
 
-          /// 2022-05-17
-          /// Date Time.
-          /// get all dates current month
-          /// match dates with results
-          /// print matched dates
-          /// compare matched dates with inbuilt calender and display results
-          if (cont.listResults.value[i] ==
-              seq[j].date.day.toString()) {
-            print(seq[j].date.day.toString());
-            print('@@@@@@@@@@@@@@@@@@@@@@@@@@');
-            print(cont.listResults.value[i]);
-            return Center(
-              child: Text(
-                "Relaxed",
-                style: TextStyle(color: primaryTwoColor, fontSize: 8),
-              ),
-            );
-          } else {
-            return const Text("hh");
-          }
+    var selectedDates = cont.listResults.toSet().toList();
+
+    if (calendarDate.date.month == DateTime.now().month) {
+      for (int i = 0; i <= selectedDates.length; i++) {
+        /// 2022-05-17
+        /// Date Time.
+        /// get all dates current month
+        /// match dates with results
+        /// print matched dates
+        /// compare matched dates with inbuilt calender and display results
+        ///
+
+        print(calendarDate.date.day);
+        //print(selectedDates[i]);
+        if (selectedDates[i] == calendarDate.date.day) {
+          return const Text("lo");
+        } else {
+          return const Text("hh");
         }
       }
     }
